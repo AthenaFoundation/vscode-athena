@@ -1,0 +1,25 @@
+{
+    "name": "athena-vscode",
+    "displayName": "Athena Environment",
+    "description": "Athena language support for vs code",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.67.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "ath",
+            "aliases": ["Athena", "ath", "athena"],
+            "extensions": [".ath"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "ath",
+            "scopeName": "source.ath",
+            "path": "./syntaxes/ath.tmLanguage.json"
+        }]
+    }
+}

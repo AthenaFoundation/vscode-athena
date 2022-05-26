@@ -55,6 +55,14 @@
 				"match": "\\b(define|match|check)\\b"
 			},
 			{
+				"name": "meta.function",
+				"match": "(define)\\s*\\W([\\w\\s]*[a-zA-Z]*)\\W",
+				"captures": {
+					"1": {"name": "keyword.control.ath"},
+					"2": {"name": "entity.name.function.ath"}
+				}
+			},
+			{
 				"name": "keyword.control.assumption-base.ath",
 				"match": "\\b(ab|assert|assume|exists|forall|pick-witness|pick-any|by-induction|conclude|holds|not|and|or)\\b"
 			}
@@ -71,8 +79,12 @@
 					"match": "(<=|>=|>|<|=)"
 				},
 				{
-					"name": "keyword.operator.apply.ath",
-					"match": "(![a-zA-Z\\W\\s]*)"
+					
+					"match": "(![a-zA-Z\\*-]*)(?:\\s)*",
+					"captures": {
+						"1": {"name": "keyword.operator.apply.ath"}
+
+					}
 				}
 			]
 		},
